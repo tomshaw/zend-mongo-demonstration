@@ -1,0 +1,50 @@
+/* Profiles schema
+*****************************************************/
+
+#profile {
+	width:97.5%;
+	min-height:500px;
+	background:#5599bb;
+	margin-top:20px;
+	padding:5px;
+	/*border: 5px solid #5599bb; 
+	border-width: 5px 5px 5px 5px;*/
+	-moz-border-radius: 15px 15px 15px 15px; 
+	border-radius: 15px 15px 15px 15px; 
+	-moz-box-shadow:0 0 5px #DDD; 
+	-webkit-box-shadow:0 0 5px rgba(10, 10, 10, .4);
+	/*background-image:url('../images/gradient.jpg');
+	background-repeat:repeat-x;*/
+    background: -moz-linear-gradient(-90deg, #003471, #448CCB);
+    background: -webkit-gradient(linear, left top, left bottom, from(#003471), to(#448CCB));
+}
+
+#profile img {
+	margin:30px;
+	border-width: 15px 5px 5px 5px; 
+	-moz-border-radius: 15px 15px 15px 15px; 
+	border-radius: 15px 15px 15px 15px; 
+	-moz-box-shadow:0 0 5px #DDD; 
+	-webkit-box-shadow:0 0 5px rgba(10, 10, 10, .4);
+}
+
+#profile .left {
+	width:30%;
+	float:left;
+}
+
+#profile .right {
+	float:left;
+	width:70%;
+}
+
+#profile .right p {
+	color:#fff;
+}
+
+#profile .right h3 {
+	font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+	color: #0D4383;
+	text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+	font-size:4em;
+}

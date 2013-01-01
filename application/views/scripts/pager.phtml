@@ -1,0 +1,37 @@
+<?php if ($this->pageCount): ?>
+
+<strong>Results:</strong> <?php echo $this->firstItemNumber; ?>/<?php echo $this->lastItemNumber; ?> <strong>Total:</strong> <?php echo $this->totalItemCount; ?>
+
+<!-- First page link -->
+<?php if (isset($this->previous)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->first)); ?>"><img src="/images/pager/btn_start.gif" width="11" height="9" /></a>
+<?php else: ?>
+  <img src="/images/pager/btn_start_off.gif" width="11" height="9" />
+<?php endif; ?>
+
+<!-- Previous page link -->
+<?php if (isset($this->previous)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->previous)); ?>"><img src="/images/pager/btn_prev.gif" width="6" height="9" /></a>
+<?php else: ?>
+  <img src="/images/pager/btn_prev_off.gif" width="6" height="9" />
+<?php endif; ?>
+
+<?php foreach ($this->pagesInRange as $page): ?>
+<?php if ($page != $this->current): ?><a href="<?php echo $this->url(array('page' => $page)); ?>"><?php echo $page; ?></a> <?php else: ?><?php echo $page; ?> <?php endif; ?>
+<?php endforeach; ?>
+
+<!-- Next page link -->
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->next)); ?>"><img src="/images/pager/btn_next.gif" width="6" height="9" /></a>
+<?php else: ?>
+  <img src="/images/pager/btn_next_off.gif" width="6" height="9" />
+<?php endif; ?>
+
+<!-- Last page link -->
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->last)); ?>"><img src="/images/pager/btn_end.gif" width="11" height="9" /></a>
+<?php else: ?>
+  <img src="/images/pager/btn_end_off.gif" width="11" height="9" />
+<?php endif; ?>
+
+<?php endif; ?>

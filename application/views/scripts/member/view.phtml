@@ -1,0 +1,12 @@
+<?php $this->headLink()->appendStylesheet('/css/profile.css'); ?>
+<div style="clear:both;"></div>
+<div id="profile">
+  <div class="left">
+    <img src="/member/render/name/<?php echo $this->row['username'] ?>" title="<?php echo $this->row['first_name'] ?> <?php echo $this->row['last_name'] ?>" width="<?php echo $this->image['metadata']['width'] ?>" height="<?php echo $this->image['metadata']['height'] ?>">
+  </div>
+  <div class="right">
+    <h3><?php echo $this->row['first_name'] ?> <?php echo $this->row['last_name'] ?></h3>
+    <p><?php echo nl2br($this->row['bio']) ?></p>
+  </div>
+  <div style="clear:both;"></div>
+</div>

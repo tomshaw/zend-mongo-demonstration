@@ -1,0 +1,37 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+  <?php echo $this->headTitle() ?>
+  <?php echo $this->headLink() ?>
+  <?php echo $this->headStyle() ?>
+  <?php echo $this->headScript() ?>
+</head>
+<body>
+<div id="wrapper">
+  <div id="page">
+    <div id="header">
+      <h1>Tom Shaw</h1>
+      <p>Zend Framework And MongoDB</p>
+    </div>
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/member">System Users</a>
+          <ul>
+            <li><a href="/groups">Group Administration</a></li>
+          </ul>
+        </li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/server">Server Information</a>
+        <li><a href="http://github.com/tomshaw" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+    <div id="content"> 
+      <?php echo $this->layout()->content ?>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="footer">Powered by <a href="http://framework.zend.com" target="_blank">Zend Framework <?php echo Zend_Version::VERSION ?></a>, <a href="http://www.mongodb.org/" target="_blank">MongoDB <?php echo \Mongo::VERSION ?></a></div>
+</div>
+</body>
+</html>

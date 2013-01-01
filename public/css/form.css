@@ -1,0 +1,138 @@
+/* Form schema
+*****************************************************/
+
+form#zendform {
+	margin:0;
+	padding:0;
+}
+
+form#zendform fieldset {
+	background-color:#fafafa;
+}
+
+form#zendform fieldset {
+	border:1px solid #6f8992;
+	border-top:23px solid #5599bb;
+	margin-bottom:10px;
+	padding-top:20px;
+	padding-bottom:20px;
+	position:relative;
+}
+
+form#zendform fieldset legend {
+	position: absolute;
+	top:-19px;
+	left:10px;
+	font-size:12px;
+	color:#fff;
+	font-weight:bold;
+}
+
+form#zendform fieldset ul li {
+	width:100%;
+	display:block;
+}
+
+form#zendform fieldset ul li label {
+	width:200px;
+	float:left;
+	margin-top:5px;
+	margin-left:15px;
+}
+
+form#zendform fieldset ul li input {
+	width:300px;
+	border:1px solid #6f8992;
+}
+
+form#zendform fieldset ul li input[type="file"] {
+	margin-bottom:5px;
+    font-family: Arial, Sans-Serif;
+    font-size: 15px;
+	padding:2px;
+    border: solid 1px #a35129;
+    width: 300px;
+}
+
+form#zendform fieldset ul li select {
+	margin-bottom:5px;
+}
+
+form#zendform fieldset ul li ul {
+	margin-left:215px;
+	margin-bottom:5px;
+	color:red;
+	font-size:11px;
+}
+
+/* Base form schema 
+*****************************************************/
+
+form#user_edit {
+	margin:0;
+	padding:0;
+}
+
+form#user_edit fieldset {
+	float: left;
+	width: 600px;
+	height: auto;
+	margin: 0 2px 10px 0;
+	padding: 20px;
+	border: 1px solid #a56e1b;
+}
+/*
+form#user_edit fieldset:hover {
+	border-color: #975f12;
+}
+*/
+form#user_edit legend {
+	font-size:22px;
+	font-weight:bold;
+	color:#342821;
+}
+
+form#user_edit label,form#user_edit label span,form#user_edit label p {
+	display: block;
+	padding: .25em .50em .25em .25em;
+}
+
+form#user_edit label {
+	float: left;
+	width: 30%;
+	text-align: right;
+	color: #333333;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+form#user_edit ul.errors {
+	margin: .5em .5em;
+}
+
+form#user_edit ul.errors li {
+	margin: 0 0 0 17em;
+	color:#de1111;
+	list-style-type:square;
+}
+
+form#user_edit fieldset input[type=checkbox] {
+	margin-left: -110px;
+	border: none;
+}
+
+form#user_edit fieldset select, textarea {
+	width: 50%;
+}
+/*
+form#user_edit fieldset input:hover,form#user_edit fieldset textarea:hover {
+	border-color: #c5bd9e;
+}
+form#user_edit fieldset input:active,
+form#user_edit fieldset input:focus,
+form#user_edit fieldset textarea:active,
+form#user_edit fieldset textarea:focus {
+	border-color: #fff;
+}
+*/
+form#user_edit div { margin: .5em .5em .5em 15em; }

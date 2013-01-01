@@ -1,0 +1,42 @@
+<?php $this->headLink()->appendStylesheet('/css/table.css'); ?>
+<h2>Groups Listing</h2>
+<p>We can also cascade delete any comments, contact information and user group data.</p>
+<form id="add-user" method="get" action="/groups/add">
+  <input type="submit" value="Create Group" name="submit" />
+</form>
+<form id="form" method="get" action="/groups/edit">
+<?php echo $this->formHidden('id') ?>
+<table class="data-list" summary="Data Listing">
+  <caption>System Groups</caption>
+  <thead>
+    <tr>
+      <th scope="col" width="5%" align="center">ID</th>
+      <th scope="col">Group Name</th>
+      <th scope="col">Sort</th>
+      <th scope="col">Created</th>
+      <th scope="col">Updated</th>
+      <th scope="col" align="center">Delete</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="4" align="right">Total:</td>
+      <td colspan="2"><?php echo $this->total ?></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <?php foreach($this->rows as $row): ?>
+    <?php $colour = $this->cycle(array("row1","row2"))->next(); ?>
+    <tr class="<?php echo $colour ?>" onMouseOver="this.bgColor='#c6bebe';" onMouseOut="this.bgColor='<?php echo $colour ?>';">
+      <td style="text-align: center;"><?php echo $this->formSubmit('submit', 'Edit', array('onclick' => "this.form.id.value='{$row['_id']}'", "class" => "button", "title" => 'Edit')) ?></td>
+      <td style="width:40%;"><a href="/group/edit/id/<?php echo $row['_id'] ?>"><?php echo $row['name'] ?></a></td>
+      <td style="text-align:center;"><?php echo $row['sort'] ?></td>
+      <td><?php echo date("F j, Y, g:i a", $row['created']->sec) ?></td>
+      <td><?php echo date("F j, Y, g:i a", $row['updated']->sec) ?></td>
+      <td align="center"><a href="/groups/delete/id/<?php echo $row['_id'] ?>">[Del]</a></td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+</form>
+<?=$this->paginationControl($this->rows, 'Elastic', 'pager.phtml');?>

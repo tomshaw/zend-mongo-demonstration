@@ -1,0 +1,38 @@
+<?php $this->headLink()->appendStylesheet('/css/table.css'); ?>
+<h2>Search Results</h2>
+<form id="form" method="get" action="/member/edit">
+<?php echo $this->formHidden('id') ?>
+<table class="data-list" summary="Data Listing">
+  <!--<caption>One to One Relations</caption>-->
+  <thead>
+    <tr>
+      <th scope="col" width="5%" align="center">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Created</th>
+      <th scope="col">Updated</th>
+      <th scope="col" align="center">Delete</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="4" align="right">Total:</td>
+      <td colspan="2"><?php echo $this->total ?></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <?php foreach($this->rows as $row): ?>
+    <?php $colour = $this->cycle(array("row1","row2"))->next(); ?>
+    <tr class="<?php echo $colour ?>" onMouseOver="this.bgColor='#c6bebe';" onMouseOut="this.bgColor='<?php echo $colour ?>';">
+      <td style="text-align: center;"><?php echo $this->formSubmit('submit', 'Edit', array('onclick' => "this.form.id.value='{$row['_id']}'", "class" => "button", "title" => 'Edit')) ?></td>
+      <td><a href="/member/edit/id/<?php echo $row['_id'] ?>"><?php echo $row['first_name'] ?> <?php echo $row['last_name'] ?></a> [<?php echo $row['email'] ?>]</td>
+      <td><?php echo $row['address']['billing']['address1'] ?></td>
+      <td><?php echo date("m.d.y", $row['created']->sec) ?></td>
+      <td><?php echo date("m.d.y", $row['updated']->sec) ?></td>
+      <td align="center"><a href="/index/delete/id/<?php echo $row['_id'] ?>">[Del]</a></td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+</form>
+<?=$this->paginationControl($this->rows, 'Elastic', 'pager.phtml');?>

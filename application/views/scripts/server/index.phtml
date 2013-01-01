@@ -1,0 +1,77 @@
+<?php $this->headLink()->appendStylesheet('/css/table.css'); ?>
+<h2>Server Information</h2>
+<p>System information is queried from the admin database.</p>
+
+<table class="data-list" summary="Data Listing">
+  <caption>System Status</caption>
+  <thead>
+    <tr>
+      <th scope="col" align="center">Option</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="2" align="right">Total records: <?php echo count($this->buildInformation) ?></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <?php foreach($this->status as $key => $value): ?>
+    <?php $colour = $this->cycle(array("row1","row2"))->next(); ?>
+    <tr class="<?php echo $colour ?>" onMouseOver="this.bgColor='#c6bebe';" onMouseOut="this.bgColor='<?php echo $colour ?>';">
+      <td><b><?php echo $key ?></b></td>
+      <td><?php echo $this->ServerSettingsValue($value); ?></td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+
+<table class="data-list" summary="Data Listing">
+  <caption>System Variables</caption>
+  <thead>
+    <tr>
+      <th scope="col" align="center">Option</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="2" align="right">Total records: <?php echo count($this->buildInformation) ?></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <?php foreach($this->buildInformation as $key => $value): ?>
+    <?php $colour = $this->cycle(array("row1","row2"))->next(); ?>
+    <tr class="<?php echo $colour ?>" onMouseOver="this.bgColor='#c6bebe';" onMouseOut="this.bgColor='<?php echo $colour ?>';">
+      <td><b><?php echo $key ?></b></td>
+      <td><?php echo $value ? $value : 'false' ?></td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+
+<table class="data-list" summary="Data Listing">
+  <caption>Directives</caption>
+  <thead>
+    <tr>
+      <th scope="col" align="center">Directive</th>
+      <th scope="col">Global Value</th>
+      <th scope="col">Local Value</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="3" align="right">Total records: <?php echo count($this->buildInformation) ?></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <?php foreach($this->directives as $key => $value): ?>
+    <?php $colour = $this->cycle(array("row1","row2"))->next(); ?>
+    <tr class="<?php echo $colour ?>" onMouseOver="this.bgColor='#c6bebe';" onMouseOut="this.bgColor='<?php echo $colour ?>';">
+      <td><b><?php echo $key ?></b></td>
+      <td><?php echo $value['global_value'] ?></td>
+      <td><?php echo $value['local_value'] ?></td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
