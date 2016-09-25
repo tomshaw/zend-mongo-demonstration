@@ -4,15 +4,11 @@ This is a basic CRUD application built to learn how to use MongoDB and incorpora
 
 Included is a rudimentary API mongoDB wrapper, a Zend Application MongoDB resource and MongoDB Zend Paginator Adapter. A prerequisite of the application was to have the ability to load and access MongoDB collections just like you normally would using tables on any other RDBMS via regular models created in your applications model namespace. Documentation on how to use the API will be coming soon, for now please refer to the examples provided in the controllers. This is an ongoing project so I'm sure there will refinements and added functionality in the future. 
 
-# Questions or Comments?
-
-Email: tom@tomshaw.info
-
 ## License 
 
 (The MIT License)
 
-Copyright (c) 2011 Tom Shaw &lt;tom@tomshaw.info&gt;
+Copyright (c) 2011 Tom Shaw &lt;tom@visfx.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
